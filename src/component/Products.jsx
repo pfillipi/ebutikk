@@ -37,7 +37,7 @@ const Products = () => {
     )
   }
 
-  const filterProducts = (cat) => {
+  const filterProduct = (cat) => {
     const updatedList = data.filter((x)=>x.category === cat);
     setFilter(updatedList);
   }
@@ -47,19 +47,19 @@ const Products = () => {
       <>
         <div className="buttons d-flex justify-content-center mb-5 pb-5">
           <button className="btn btn-outline-dark me-2" onClick={()=>setFilter(data)}>All</button>
-          <button className="btn btn-outline-dark me-2" onClick={()=>setFilter("men's clothing")}>Men's Clothes</button>
-          <button className="btn btn-outline-dark me-2" onClick={()=>setFilter("women's clothing")}>Women's Clothes</button>
-          <button className="btn btn-outline-dark me-2" onClick={()=>setFilter("jewelery")}>Jewelry</button>
-          <button className="btn btn-outline-dark me-2" onClick={()=>setFilter("electronics")}>Electronic</button>
+          <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("men's clothing")}>Men's Clothes</button>
+          <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("women's clothing")}>Women's Clothes</button>
+          <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("jewelery")}>Jewelry</button>
+          <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("electronics")}>Electronic</button>
         </div>
-        {filter.map((product)=>{
+        {filter.map((product) => {
           return(
             <>
               <div className="col-md-3 mb-4" >
               <div class="card h-100 text-center p-4" key={product.id}>
                 <img src={product.image} class="card-img-top" alt={product.title} height="250px" />
                 <div class="card-body">
-                  <h5 class="card-title mb-0">{product.title.substring(0, 12)}…</h5>
+                  <h5 class="card-title mb-0">{product.title}…</h5>
                   <p class="card-text lead fw-bold">${product.price}</p>
                   <a href="#" class="btn btn-outline-dark">Buy</a>
                 </div>
