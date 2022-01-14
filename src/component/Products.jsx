@@ -38,7 +38,8 @@ const Products = () => {
   }
 
   const filterProducts = (cat) => {
-    const updatedList = data.filter((x)=>x.category )
+    const updatedList = data.filter((x)=>x.category === cat);
+    setFilter(updatedList);
   }
 
   const ShowProducts = () => {
