@@ -36,6 +36,11 @@ const Products = () => {
       </>
     )
   }
+
+  const filterProducts = (cat) => {
+    
+  }
+
   const ShowProducts = () => {
     return(
       <>
