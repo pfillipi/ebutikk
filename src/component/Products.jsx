@@ -38,7 +38,7 @@ const Products = () => {
   }
 
   const filterProducts = (cat) => {
-    
+    const updatedList = data.filter((x)=>x.category )
   }
 
   const ShowProducts = () => {
