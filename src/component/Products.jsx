@@ -41,8 +41,8 @@ const Products = () => {
       <>
         <div className="buttons d-flex justify-content-center mb-5 pb-5">
           <button className="btn btn-outline-dark me-2" onClick={()=>setFilter(data)}>All</button>
-          <button className="btn btn-outline-dark me-2" onClick={()=>setFilter(data)}>Men's Clothes</button>
-          <button className="btn btn-outline-dark me-2" onClick={()=>setFilter(data)}>Women's Clothes</button>
+          <button className="btn btn-outline-dark me-2" onClick={()=>setFilter("men's clothing")}>Men's Clothes</button>
+          <button className="btn btn-outline-dark me-2" onClick={()=>setFilter("women's clothing")}>Women's Clothes</button>
           <button className="btn btn-outline-dark me-2" onClick={()=>setFilter(data)}>Jewelry</button>
           <button className="btn btn-outline-dark me-2" onClick={()=>setFilter(data)}>Electronic</button>
         </div>
