@@ -1,12 +1,14 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
+  const state = useSelector((state) => state.handleCart)
   return (
     <div>
       <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
         <div class="container-fluid">
-          <NavLink class="navbar-brand fw-bold fs-4" to="#">Tromsø Collection</NavLink>
+          <NavLink class="navbar-brand fw-bold fs-4" to="/">Tromsø Butikk</NavLink>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -27,8 +29,11 @@ const Navbar = () => {
             </ul>
             <div className="buttons">
               <NavLink to="/login" className="btn btn-outline-dark"><i className="fa fa-sign-in me-1"></i> Log in</NavLink>
-              <NavLink to="/register" className="btn btn-outline-dark ms-2"><i className="fa fa-user-plus me-1"></i> Register</NavLink>
-              <NavLink to="/cart" className="btn btn-outline-dark ms-2"><i className="fa fa-shopping-cart me-1"></i> Cart</NavLink>
+              <NavLink to="/register" className="btn btn-outline-dark ms-2">
+                <i className="fa fa-user-plus me-1"></i> Register</NavLink>
+              <NavLink to="/cart" className="btn btn-outline-dark ms-2">
+                <i className="fa fa-shopping-cart me-1"></i> Cart (
+                  {state.length})</NavLink>
             </div>
           </div>
         </div>
